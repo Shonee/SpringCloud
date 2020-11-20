@@ -1,0 +1,15 @@
+#服务名称
+spring:
+  application:
+    name: eureka-service
+
+#服务端口号
+server:
+  port: 8701
+#指定注册eureka服务地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8697/eureka
+  instance:
+    hostname: localhost
