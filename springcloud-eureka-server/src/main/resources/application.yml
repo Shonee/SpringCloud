@@ -1,0 +1,26 @@
+#设置服务名称
+spring:
+  application:
+    name: eureka-server
+
+#设置服务端口号；配置高可用时，注释掉当前端口配置
+#server:
+#  port: 8700
+
+#设置eureka注册地址
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+#    register-with-eureka: false   #自身，不再向eureka注册
+#    fetch-registry: false   #启动时禁用client的注册
+#  instance:
+#    hostname: localhost
+
+#设置eureka注册地址，高可用情况下的多Eureka服务
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8698/eureka,http://localhost:8699/eureka  #在另外两个相同服务中注册
+    register-with-eureka: false   #自身，不再向eureka注册
+    fetch-registry: false   #启动时禁用client的注册
